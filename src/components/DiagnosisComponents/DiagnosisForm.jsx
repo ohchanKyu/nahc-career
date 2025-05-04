@@ -63,7 +63,7 @@ const DiagnosisForm = (props) => {
       return;
   }
     const diagnosisResponse = await getDiagnosisResultService(jobType, description);  
-    const res = await fetch(`${import.meta.env.VITE__LLM_BACKEND_URL}/diagnosis`, {
+    const res = await fetch(`${import.meta.env.VITE_LLM_BACKEND_URL}/diagnosis`, {
       method: "POST",
       headers: {
           "Content-Type": "application/json",

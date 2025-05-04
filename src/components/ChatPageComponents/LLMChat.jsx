@@ -54,7 +54,7 @@ const LLMChat = ({ section }) => {
             setQuestion('');
             setPreviousMessages((prev) => [...prev, { question: currentQuestion, answer: "" }]);
     
-            const res = await fetch(`${import.meta.env.VITE__LLM_BACKEND_URL}/chat`, {
+            const res = await fetch(`${import.meta.env.VITE_LLM_BACKEND_URL}/chat`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

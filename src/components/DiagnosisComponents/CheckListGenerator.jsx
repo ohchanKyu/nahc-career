@@ -76,7 +76,7 @@ function ChecklistGenerator(props) {
       setIsSubmit(false);
       return;
     }
-    const res = await fetch(`${import.meta.env.VITE__LLM_BACKEND_URL}/checklist`, {
+    const res = await fetch(`${import.meta.env.VITE_LLM_BACKEND_URL}/checklist`, {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
