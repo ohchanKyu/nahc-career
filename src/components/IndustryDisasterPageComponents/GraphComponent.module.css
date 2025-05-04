@@ -1,0 +1,122 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 16px 40px 16px;
+    background: linear-gradient(135deg, #f7fafc 0%, #e3eafc 100%);
+    min-height: 100vh;
+    font-family: "Noto Sans KR", "Pretendard", Arial, sans-serif;
+    margin:50px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 36px;
+    max-width: 900px;
+}
+
+.title {
+    font-weight: 800;
+    color: #17375d;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: #4d648d;
+    margin: 16px 0 8px 0;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1rem;
+    color: #6c7a89;
+    line-height: 1.8;
+    margin-top: 8px;
+}
+
+.all_wrapper {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+.buttonGroup {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 10px;
+    width: 100%;
+    word-break: keep-all;
+
+}
+.tabButton {
+    background-color: #3e6fd7;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+.tabButton:hover,
+.tabButton:focus {
+    background-color: #2f58b2;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tabButton.active {
+    background-color: #1f397d;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.graph_wrapper {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(79, 140, 255, 0.10), 0 1.5px 6px rgba(0,0,0,0.05);
+    padding: 38px 28px;
+    width: 100%;
+    max-width: 700px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+@media (max-width: 900px) {
+    .graph_wrapper {
+        padding: 28px 8px;
+        min-height: 320px;
+    }
+    .all_wrapper {
+        max-width: 98vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+    .graph_wrapper {
+        min-width: 0;
+        width: 98vw;
+        padding: 18px 2vw;
+    }
+    .buttonGroup {
+        max-width: 98vw;
+        gap: 8px;
+    }
+}

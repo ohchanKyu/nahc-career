@@ -1,0 +1,19 @@
+.graphCard {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    height: 760px;
+    width: 760px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.graphCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.graphCard canvas {
+    height: 100% !important;
+    width: 100% !important;
+}

@@ -1,0 +1,44 @@
+.background{
+    margin:100px 0;
+}
+.page {
+    background-color: #10110d;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 13px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.title{
+    font-weight: bold;
+    text-align: center;
+    color:white;
+    margin:20px 0 50px 0;
+    font-family: "Playwrite NZ", cursive;
+}
+.pageDescription{
+    font-size: 14px;
+    font-weight: bold;
+    color:white;
+    margin:20px 0;
+    text-align: center;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    margin:30px 0;
+}
+
+.toggleButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #10a37f;
+    border-radius: 8px;
+    background-color: #10a37f;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+

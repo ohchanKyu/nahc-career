@@ -1,0 +1,112 @@
+.container{
+  padding:0 20px;
+}
+.totalRiskLevelText{
+  text-align: center;
+  font-weight: bold;
+  color:white;
+  font-size: 20px;
+  margin:0;
+  padding:10px 0;
+}
+.description{
+  margin:20px 0;
+  font-weight: 600;
+  padding:10px 0;
+  word-break: keep-all;
+  font-size: 14px;
+  
+}
+.keywords {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .keywordItem {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+  }
+  
+  .keywordItem:hover {
+    transform: translateY(-4px);
+  }
+  
+  .keywordText {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .progressWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .progressBar {
+    flex: 1;
+    height: 10px;
+    appearance: none;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+  }
+  
+  .progressBar::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .progressBar::-webkit-progress-value {
+    background: linear-gradient(90deg, #4f46e5, #3b82f6);
+    border-radius: 5px;
+  }
+  
+  .progressBar::-moz-progress-bar {
+    background: linear-gradient(90deg, #4f46e5, #3b82f6);
+    border-radius: 5px;
+  }
+  
+  .percentText {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4f46e5;
+    min-width: 50px;
+    text-align: right;
+  }
+  .totalRiskLevel {
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .totalRiskLevel[data-level="매우 높음"] {
+    background-color: #FF0000;
+  }
+  
+  .totalRiskLevel[data-level="높음"] {
+    background-color: #ff7300;
+  }
+  
+  .totalRiskLevel[data-level="보통"] {
+    background-color: #d7b803;
+  }
+  
+  .totalRiskLevel[data-level="낮음"] {
+    background-color: #32CD32;
+  }
+  
+  .totalRiskLevel[data-level="매우 낮음"] {
+    background-color: #008000; 
+  }
