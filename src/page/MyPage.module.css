@@ -1,0 +1,21 @@
+.pageWrapper{
+    margin:100px 0;
+}
+.background{
+    margin:100px 0;
+}
+.page {
+    background-color: #10110d;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 13px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.title{
+    font-weight: bold;
+    text-align: center;
+    color:white;
+    margin:20px 0 50px 0;
+    font-family: "Playwrite NZ", cursive;
+}

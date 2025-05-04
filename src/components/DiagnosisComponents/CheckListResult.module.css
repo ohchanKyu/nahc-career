@@ -56,7 +56,7 @@
     align-items: center;
     gap:30px;
 }
-.downloadButton, .saveButton {
+.downloadButton{
     margin-top: 1.5rem;
     padding: 12px 24px;
     background-color: #10a37f;
@@ -65,7 +65,7 @@
     font-weight: bold;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
+    width:100%;
 }
 .importance {
     margin-left: 12px;

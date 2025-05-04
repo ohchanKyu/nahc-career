@@ -8,6 +8,7 @@ import ProtectedRoute from './store/ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ChatPage from './page/ChatPage';
 import IndustryDisasterPage from './page/IndustryDisasterPage';
+import MyPage from './page/MyPage';
 
 const router = createBrowserRouter([
 
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <ChatPage/>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path : '/me',
+    element: (
+      <ProtectedRoute>
+        <MyPage/>
       </ProtectedRoute>
     ),
   },

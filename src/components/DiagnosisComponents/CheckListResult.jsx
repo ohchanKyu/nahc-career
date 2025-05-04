@@ -1,10 +1,36 @@
-import React from "react";
+import React,{ useContext, useEffect } from "react";
 import classes from "./CheckListResult.module.css";
 import { motion, AnimatePresence } from "framer-motion";
-import { downloadCheckListPdfService } from '../../api/CheckListService';
+import { downloadCheckListPdfService, saveChecklistService } from '../../api/CheckListService';
 import { FaCheckDouble } from "react-icons/fa";
+import loginContext from "../../store/login-context";
+import { toast } from "react-toastify";
 
 const CheckListResult = ({ checklist, userInput }) => {
+
+  const loginCtx = useContext(loginContext);
+  
+  const saveResultHandler = async () => {
+    const saveResponse = await saveChecklistService(loginCtx.memberId,{
+      checkListForm : userInput,
+      checkListResultList : checklist
+    });
+    if (saveResponse.success && saveResponse.data) {
+      toast.success("체크리스트 결과가 저장되었습니다 \n 마이페이지에서 확인가능합니다.", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+      }); 
+    }
+  };
+  
+  useEffect(() => {
+    saveResultHandler();
+  },[checklist, userInput]);
 
   const downloadPdf = async () => {
     const downloadResponse = await downloadCheckListPdfService({
@@ -93,13 +119,6 @@ const CheckListResult = ({ checklist, userInput }) => {
               whileTap={{ scale: 0.95 }}
             >
               PDF 다운로드
-            </motion.button>
-            <motion.button
-              className={classes.saveButton}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              결과 저장하기
             </motion.button>
           </div>
         </motion.div>

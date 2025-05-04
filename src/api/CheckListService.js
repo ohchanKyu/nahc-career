@@ -81,7 +81,6 @@ export const downloadCheckListPdfService = async (checklist) => {
         const pdfResponse = await apiClient.post('/download/pdf',checklist, {
             responseType: 'blob',
         });
-        console.log(pdfResponse);
         return pdfResponse;
       }catch(error){
           if (error.response){
@@ -98,4 +97,64 @@ export const downloadCheckListPdfService = async (checklist) => {
           });
           return { success : false }
       }
+}
+export const saveChecklistService = async (memberId,checklist) => {
+  try{
+      const saveResponse = await apiClient.post(`/${memberId}`,checklist);
+      return await saveResponse.data;
+    }catch(error){
+        if (error.response){
+            return error.response.data;
+        }
+        toast.error(`일시적 네트워크 오류입니다.\n 잠시 후 다시 시도해주세요.`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return { success : false }
+    }
+}
+export const getAllChecklistService = async (memberId) => {
+  try{
+      const checklistResponse = await apiClient.get(`/${memberId}`);
+      return await checklistResponse.data;
+    }catch(error){
+        if (error.response){
+            return error.response.data;
+        }
+        toast.error(`일시적 네트워크 오류입니다.\n 잠시 후 다시 시도해주세요.`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return { success : false }
+    }
+}
+export const deleteChecklistService = async (checklistId) => {
+  try{
+      const deleteResponse = await apiClient.delete(`/${checklistId}`);
+      return await deleteResponse.data;
+    }catch(error){
+        if (error.response){
+            return error.response.data;
+        }
+        toast.error(`일시적 네트워크 오류입니다.\n 잠시 후 다시 시도해주세요.`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return { success : false }
+    }
 }

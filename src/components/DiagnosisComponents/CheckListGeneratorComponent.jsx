@@ -13,6 +13,7 @@ const CheckListGeneratorComponent = () => {
         setChecklist(result);
         setUserInput(userInput);
     };
+    
     return (
         <div className={classes.pageWrapper}>
             <header className={classes.header}>

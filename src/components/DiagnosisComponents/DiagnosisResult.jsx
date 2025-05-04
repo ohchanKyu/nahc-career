@@ -1,13 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import classes from "./DiagnosisResult.module.css";
 import RiskKeywordsList from "./RiskKeywordsList";
 import { motion, AnimatePresence } from "framer-motion";
 import SimilarCasesList from "./SimilarCasesList";
 import { FaCheckDouble } from "react-icons/fa";
+import loginContext from "../../store/login-context";
+import { saveDiagnosisResultService } from "../../api/DiagnosisService";
+import { toast } from "react-toastify";
 
 const DiagnosisResult = ({ result }) => {
 
     const [activeTab, setActiveTab] = useState("risk");
+
+    const loginCtx = useContext(loginContext);
+    const memberId = loginCtx.memberId;
+    
+    const saveResultHandler = async () => {
+
+        const scores = result.diagnosisCal.riskScores;
+        const keywords = result.diagnosisCal.riskKeywords;
+        const valueScore = [];
+        keywords.filter((keyword) => {
+            const value = scores[keyword];
+            return !isNaN(value) && value !== undefined && value !== null;
+        }).map((keyword) => {
+            const value = `${(scores[keyword] * 100).toFixed(1)}%`;
+            valueScore.push(value);
+        })
+
+        const saveResponse = await saveDiagnosisResultService(memberId, {
+            riskKeywords : keywords,
+            riskScores : valueScore,
+            content : result.diagnosisData.content,
+            diagnosis : result.diagnosisData.diagnosis,
+            similarCases : result.diagnosisCal.similarCases,
+        });
+        if (saveResponse.success && saveResponse.data) {
+            toast.success("진단 결과가 저장되었습니다 \n 마이페이지에서 확인가능합니다.", {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+            }); 
+        }
+    };
+
+    useEffect(() => {
+        saveResultHandler();
+    },[result]);
 
     return (
         <AnimatePresence>
