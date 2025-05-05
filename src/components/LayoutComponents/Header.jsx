@@ -1,14 +1,11 @@
-import React, { useContext, useState, useRef } from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import loginContext from '../../store/login-context';
 import classes from "./Header.module.css";
 import { logoutService } from '../../api/MemberService';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { IoIosArrowForward } from "react-icons/io";
-import { GrPowerReset } from "react-icons/gr";
 
 const Header = () => {
 

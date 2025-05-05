@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import classes from "./GraphList.module.css";
 import { getGraphDataService } from "../../api/GraphService";
 import Loading from "../LayoutComponents/Loading";
 import Graph from "./Graph";
@@ -19,12 +18,11 @@ const GraphList = ({ selectedIndex }) => {
     }, []);
 
     return (
-        <div className={classes.wrapper}>
+        <div>
             {isLoading && <Loading />}
             {graph && graph[selectedIndex] && (
                 <div
                     key={graph[selectedIndex].id}
-                    className={classes.graphItem}
                 >
                     <Graph graph={graph[selectedIndex]} />
                 </div>

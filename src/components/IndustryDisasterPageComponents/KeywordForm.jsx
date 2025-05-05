@@ -25,7 +25,7 @@ const KeywordForm = () => {
 
   const [query, setQuery] = useState('');
   const [isModal,setIsModal] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null); // <-- 추가
+  const [selectedItem, setSelectedItem] = useState(null);
   const debouncedQuery = useDebounce(query, 400);
   const [results, setResults] = useState([]);
   const [displayedResults, setDisplayedResults] = useState([]);

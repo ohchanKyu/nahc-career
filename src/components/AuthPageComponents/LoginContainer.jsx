@@ -4,7 +4,6 @@ import LoginInput from "./LoginInput";
 import { signinService } from "../../api/AuthService";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const LoginContainer = () => {
 

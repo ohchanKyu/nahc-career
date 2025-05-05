@@ -31,14 +31,14 @@
 }
 
 .chat_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .chat_buttons {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 .chat_name {
   margin-top: 20px;

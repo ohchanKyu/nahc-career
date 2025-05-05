@@ -25,7 +25,15 @@ const LLMChatList = () => {
 
     const createChatSectionHandler = async () => {
         if (title.trim().length === 0) {
-            toast.error("Please enter a title for the chat section.");
+            toast.warning("채팅방 제목 설정은 필수입니다.", {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return;
         }
         const createSectionsResponse = await createChatSectionService(memberId,title);
@@ -42,7 +50,7 @@ const LLMChatList = () => {
         setIsLoading(true);
         const chatSectionsResponse = await getAllChatSectionsService(memberId);
         if (chatSectionsResponse.success) {
-            const reversedSections = [...chatSectionsResponse.data].reverse(); // 복사 후 reverse
+            const reversedSections = [...chatSectionsResponse.data].reverse();
             setChatSections(reversedSections);
             if (reversedSections.length > 0) {
                 setCurrentSection(reversedSections[0]);
@@ -76,7 +84,15 @@ const LLMChatList = () => {
 
     const saveEditedTitle = async (sectionId, editTitle) => {
         if (editTitle.trim().length === 0) {
-            toast.error("Title cannot be empty.");
+            toast.warning("채팅방 제목 설정은 필수입니다.", {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return;
         }
         setChatSections(prev =>

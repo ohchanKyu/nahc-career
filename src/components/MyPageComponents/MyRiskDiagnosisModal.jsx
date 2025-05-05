@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import classes from './MyRiskDiagnosisModal.module.css';
-import { IoIosCloseCircle } from "react-icons/io";
 
 const MyRiskDiagnosisModal = ({ isOpen, onClose, children }) => {
 

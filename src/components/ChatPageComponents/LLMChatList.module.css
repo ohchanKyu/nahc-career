@@ -13,12 +13,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* 둥글게 처리된 부분 삐져나오지 않도록 */
-    margin: 24px; /* 전체적으로 여백 주고 */
+    overflow: hidden; 
+    margin: 24px;
 }
 
 .chat_section_wrapper {
-    width: 380px; /* 기존 320px보다 넓게 조정 */
+    width: 380px;
     background-color: #202123;
     color: white;
     padding: 24px;
@@ -34,7 +34,7 @@
 
 .chat_section_wrapper::-webkit-scrollbar-track,
 .chat_content::-webkit-scrollbar-track {
-    background: transparent; /* 깔끔하게 */
+    background: transparent;
 }
 
 .chat_section_wrapper::-webkit-scrollbar-thumb,
@@ -90,7 +90,7 @@
 
 .chat_section_list h1 {
     margin-top: 20px;
-    font-size: 22px; /* 기존보다 좀 더 큼직하게 */
+    font-size: 22px;
     font-weight: bold;
     border-bottom: 1px solid #444;
     padding-bottom: 8px;
@@ -103,8 +103,8 @@
     background-color: #e5e5e5;
 }
 .new_chat_description {
-    background: rgba(255, 255, 255, 0.05); /* 살짝 투명한 느낌 */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* 살짝 테두리 */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 24px;
     font-weight: bold;
@@ -112,14 +112,13 @@
     line-height: 1.8;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px); /* 흐림 효과 */
+    backdrop-filter: blur(8px);
     animation: fadeInUp 0.6s ease;
-     /* 💡 추가된 Flex 관련 스타일 */
-     display: flex;
-     flex-direction: column;
-     justify-content: center; /* 세로 가운데 */
-     align-items: center;     /* 가로 가운데 */
-     height: 100%;            /* 또는 원하는 높이 예: 300px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    height: 100%; 
 }
 
 @keyframes fadeInUp {

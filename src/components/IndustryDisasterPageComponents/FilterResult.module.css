@@ -1,94 +1,94 @@
 .resultsContainer {
-    margin-top: 10px;
-    height: 500px;
-    width:380px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border: 1px solid #ddd;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding: 18px;
-    background: #f9f9f9;
-    box-sizing: border-box;
-  }
-  
-  .resultsContainer::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .resultsContainer::-webkit-scrollbar-thumb {
-    background-color:#10a37f;
-    border-radius: 10px;
-  }
-  
-  .resultsContainer::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
-  }
-  .resultItem {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 18px;
-    background: #ffffff;
-    border-radius: 10px;
-    font-size: 15px;
-    color: #333;
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    gap:10px;
-  }
-  .placeName {
-    flex: 1;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
-  .regionCode {
-    text-align: right; 
-    color: #888; 
-  }
-  .resultItem:hover {
-    background: #f0f0f0;
-  }
-  .noResultsText{
-    text-align: center;
-    color: #0d147a;
-    font-weight: bold;
-    margin:140px 0 0 0;
-  }
-  .jobType {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #10a37f;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  height: 500px;
+  width:380px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid #ddd;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 18px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.resultsContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.resultsContainer::-webkit-scrollbar-thumb {
+  background-color:#10a37f;
+  border-radius: 10px;
+}
+
+.resultsContainer::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+.resultItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  gap:10px;
+}
+.placeName {
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.regionCode {
+  text-align: right; 
+  color: #888; 
+}
+.resultItem:hover {
+  background: #f0f0f0;
+}
+.noResultsText{
+  text-align: center;
+  color: #0d147a;
+  font-weight: bold;
+  margin:140px 0 0 0;
+}
+.jobType {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #10a37f;
+  margin-bottom: 10px;
 }
 
 .description {
-    margin-bottom: 8px;
-    line-height: 1.5;
-    color: #333;
-    font-size: 13px;
-    word-break: keep-all;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #333;
+  font-size: 13px;
+  word-break: keep-all;
 }
 
 .reason, .solution  {
-    font-size: 13px;
-    margin-bottom: 6px;
-    line-height: 1.6;
-    color: #333;
-    word-break: keep-all;
-    margin-top: 10px;
+  font-size: 13px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  color: #333;
+  word-break: keep-all;
+  margin-top: 10px;
 }
 
 .card strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 .solutionDesc{
-    word-break: keep-all;
-    font-size: 12px;
-    margin:3px 0;
+  word-break: keep-all;
+  font-size: 12px;
+  margin:3px 0;
 }

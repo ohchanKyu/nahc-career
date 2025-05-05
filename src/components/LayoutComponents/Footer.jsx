@@ -16,7 +16,7 @@ const Footer = () => {
                 <a className={classes.icon_link} href="mailto:okc0202@naver.com">
                     <FaEnvelope className={classes.icon} />
                 </a>
-                <a className={classes.icon_link} href="https://github.com/DKU-VeTT" target="_blank" rel="noopener noreferrer">
+                <a className={classes.icon_link} href="https://github.com/ohchanKyu/nahc-career" target="_blank" rel="noopener noreferrer">
                     <FaGithub className={classes.icon}/>
                 </a>
             </div>
