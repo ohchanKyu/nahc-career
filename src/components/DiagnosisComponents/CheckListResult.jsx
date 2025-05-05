@@ -33,7 +33,7 @@ const CheckListResult = ({ checklist, userInput }) => {
   },[checklist, userInput]);
 
   const downloadPdf = async () => {
-    const downloadResponse = await downloadCheckListPdfService({
+    const downloadResponse = await downloadCheckListPdfService(loginCtx.memberId,{
       checkListForm : userInput,
       checkListResultList : checklist
     });

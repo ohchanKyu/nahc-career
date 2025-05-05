@@ -59,8 +59,21 @@ function ChecklistGenerator(props) {
   };
 
   const generateChecklist = async () => {
+    
     setIsSubmit(true);
-
+    if (inputs.reason.trim().length > 10){
+      toast.warning("사고 키워드는 15자 이내로 입력해주세요.", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      });
+      setIsSubmit(false);
+      return;
+    }
     const isAnyEmpty = Object.entries(inputs).some(([key, value]) => value.trim() === '');
     
     if (isAnyEmpty) {

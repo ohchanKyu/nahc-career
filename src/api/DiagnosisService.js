@@ -141,7 +141,7 @@ export const getAllDiagnosisResultService = async (memberId) => {
 
 export const deleteDiagnosisResultService = async (diagnosisId) => {
   try{
-    const deleteResponse = await apiClient.get(`/${diagnosisId}`);
+    const deleteResponse = await apiClient.delete(`/${diagnosisId}`);
     return await deleteResponse.data;
   }catch(error){
       if (error.response){

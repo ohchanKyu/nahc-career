@@ -5,6 +5,7 @@ import Footer from "../components/LayoutComponents/Footer";
 import MyInformation from "../components/MyPageComponents/MyInformation";
 import MyDiagnosis from "../components/MyPageComponents/MyDiagnosis";
 import loginContext from "../store/login-context";
+import { motion } from "framer-motion";
 
 const MyPage = () => {
 
@@ -15,7 +16,11 @@ const MyPage = () => {
     return (
         <>
             <Header/>
-            <div className={classes.background}>
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className={classes.background}>
                 <div className={classes.page}>
                     <h1 className={classes.title}>Safe WorkCare</h1>
                     <div className={classes.selectContainer}>
@@ -27,7 +32,7 @@ const MyPage = () => {
                         {option === 2 && memberId && <MyDiagnosis  memberId={memberId}/>}
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <Footer/>
         </>
     )

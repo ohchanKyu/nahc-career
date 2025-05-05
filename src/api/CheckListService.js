@@ -76,9 +76,9 @@ apiClient.interceptors.response.use(
   }
 );
 
-export const downloadCheckListPdfService = async (checklist) => {
+export const downloadCheckListPdfService = async (memberId, checklist) => {
     try{
-        const pdfResponse = await apiClient.post('/download/pdf',checklist, {
+        const pdfResponse = await apiClient.post(`/download/pdf/${memberId}`,checklist, {
             responseType: 'blob',
         });
         return pdfResponse;
