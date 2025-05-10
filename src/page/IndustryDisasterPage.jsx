@@ -27,7 +27,7 @@ const IndustryDisasterPage = () => {
                     <h1 className={classes.title}>Safe WorkCare </h1>
                     <p className={classes.pageDescription}>
                         산업재해 예방을 위한 다양한 정보를 제공합니다. <br/>
-                        통계 분석부터 사례 공유, 위험 진단, 예방 체크리스트까지 항목을 선택해 확인해보세요.
+                        통계 분석부터 사례 정보, 위험 진단, 예방 체크리스트까지 항목을 선택해 확인해보세요.
                     </p>
                     <div className={classes.buttonContainer}>
                         <motion.button

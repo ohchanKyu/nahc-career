@@ -50,25 +50,24 @@ const MyRiskDiganosis = ({ diagnosisResult, onDelete }) => {
                                         let numericScore;
                                         if (scoreString){
                                             numericScore = parseFloat(scoreString.replace('%', '')); 
-                                        }else{
-                                            numericScore = 0.0;
-                                            scoreString = "0.0%";
-                                        }
-                                        return (
-                                            <div key={keyword} className={classes.keywordItem}>
-                                                <span className={classes.keywordText}>{keyword}</span>
-                                                <div className={classes.progressWrapper}>
-                                                    <progress
-                                                        value={numericScore}
-                                                        max="100"
-                                                        className={classes.progressBar}
-                                                    ></progress>
-                                                    <span className={classes.percentText}>
-                                                        {scoreString}
-                                                    </span>
+                                            return (
+                                                <div key={keyword} className={classes.keywordItem}>
+                                                    <span className={classes.keywordText}>{keyword}</span>
+                                                    <div className={classes.progressWrapper}>
+                                                        <progress
+                                                            value={numericScore}
+                                                            max="100"
+                                                            className={classes.progressBar}
+                                                        ></progress>
+                                                        <span className={classes.percentText}>
+                                                            {scoreString}
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        )
+                                            )
+                                        }else{
+                                            return <></>
+                                        }
                                     })}
                                 </div>
                                 <div className={classes.buttonContainer}>

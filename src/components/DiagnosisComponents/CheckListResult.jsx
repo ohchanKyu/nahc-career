@@ -1,4 +1,4 @@
-import React,{ useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import classes from "./CheckListResult.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { downloadCheckListPdfService, saveChecklistService } from '../../api/CheckListService';
@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 const CheckListResult = ({ checklist, userInput }) => {
 
   const loginCtx = useContext(loginContext);
-  
+  const [isDownload, setIsDownload] = useState(false);
+
   const saveResultHandler = async () => {
     const saveResponse = await saveChecklistService(loginCtx.memberId,{
       checkListForm : userInput,
@@ -33,6 +34,7 @@ const CheckListResult = ({ checklist, userInput }) => {
   },[checklist, userInput]);
 
   const downloadPdf = async () => {
+    setIsDownload(true);
     const downloadResponse = await downloadCheckListPdfService(loginCtx.memberId,{
       checkListForm : userInput,
       checkListResultList : checklist
@@ -49,6 +51,7 @@ const CheckListResult = ({ checklist, userInput }) => {
     document.body.appendChild(link);
     link.click();
     link.remove();
+    setIsDownload(false);
   };
 
   const grouped = {
@@ -69,10 +72,10 @@ const CheckListResult = ({ checklist, userInput }) => {
     <AnimatePresence>
       {checklist.length > 0 && (
         <motion.div
+          key={JSON.stringify(checklist)}
           className={classes.resultContainer}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.4 }}
         >
           <motion.h2
@@ -114,11 +117,12 @@ const CheckListResult = ({ checklist, userInput }) => {
           <div className={classes.buttonContainer}>
             <motion.button
               onClick={downloadPdf}
+              disabled={isDownload} 
               className={classes.downloadButton}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              PDF 다운로드
+              {isDownload ? '파일 생성중...' : 'PDF 다운로드'}
             </motion.button>
           </div>
         </motion.div>

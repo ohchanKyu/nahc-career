@@ -23,7 +23,7 @@ const IndustryFilter = () => {
                     className={classes.toggleButton}
                     onClick={() => setType(2)}
                 >
-                    필터 검색
+                    필터링 검색
                 </motion.button>
             </div>
             {type === 1 && <KeywordForm/>}

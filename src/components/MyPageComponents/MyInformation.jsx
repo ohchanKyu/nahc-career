@@ -17,7 +17,7 @@ const MyInformation = () => {
 
     const [memberInfo,setMemberInfo] = useState(null);
     const [isModal,setIsModal] = useState(false);
-    const [isDelete,setIsDelete] = useState(false);
+    const [isWait,setIsWait] = useState(false);
 
     const loginCtx = useContext(loginContext);
     const memberId = loginCtx.memberId;
@@ -25,7 +25,7 @@ const MyInformation = () => {
 
     const confirmDelete = async () => {
         setIsModal(false);
-        setIsDelete(true);
+        setIsWait(true);
         const logoutResponseData = await logoutService();
         if (logoutResponseData.success){
             const deleteResponseData = await deleteMemberService(memberId);
@@ -39,7 +39,7 @@ const MyInformation = () => {
                     draggable: true,
                     progress: undefined,
                 });
-                setIsDelete(false);
+                setIsWait(false);
                 navigate('/auth');
             }
             loginCtx.logoutUser();
@@ -54,7 +54,7 @@ const MyInformation = () => {
                 progress: undefined,
             });
         }
-        setIsDelete(false);
+        setIsWait(false);
     };
 
     const showModal = () => {
@@ -67,6 +67,7 @@ const MyInformation = () => {
 
     useEffect(() => {
         const fetchMemberData = async () => {
+            setIsWait(true);
             const memberResponse = await getMemberService(memberId);
             const diagnosisResult = await getAllDiagnosisResultService(memberId);
             const checklistResult = await getAllChecklistService(memberId);
@@ -77,13 +78,14 @@ const MyInformation = () => {
                 diagnosisCount : diagnosisResult.data.length,
                 chatSectionCount : chatSectionResult.data.length
             });
+            setIsWait(false);
         };
         fetchMemberData();
     },[memberId]);
 
     return (
         <>
-            {isDelete && <Loading/>}
+            {isWait && <Loading/>}
             <AnimatePresence>
                 {memberInfo && (
                     <motion.div 
@@ -127,7 +129,7 @@ const MyInformation = () => {
                         </div>
                         <ul className={classes.check_list}>
                             <li className={classes.check_one}>
-                                채팅방, 진단 기록, 체크리스트, 프로필 등 모든 정보가 삭제됩니다.
+                                AI 채팅, 진단 기록, 체크리스트, 프로필 등 모든 정보가 삭제됩니다.
                             </li>
                             <li className={classes.check_two}>
                                 이전 정보는 모두 삭제되며 필요한 데이터는 미리 백업을 해주세요.

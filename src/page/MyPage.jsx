@@ -24,8 +24,8 @@ const MyPage = () => {
                 <div className={classes.page}>
                     <h1 className={classes.title}>Safe WorkCare</h1>
                     <div className={classes.selectContainer}>
-                        <button className={option === 1 ? classes.selected : classes.unselected} onClick={() => setOption(1)}>My Information</button>
-                        <button className={option === 2 ? classes.selected : classes.unselected} onClick={() => setOption(2)}>My Diagnosis</button>
+                        <button className={option === 1 ? classes.selected : classes.unselected} onClick={() => setOption(1)}>내 정보</button>
+                        <button className={option === 2 ? classes.selected : classes.unselected} onClick={() => setOption(2)}>내 서비스 결과</button>
                    </div>
                     <div className={classes.sectionContainer}>
                         {option === 1 && memberId && <MyInformation memberId={memberId}/>}

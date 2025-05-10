@@ -36,6 +36,18 @@ const LLMChatList = () => {
             });
             return;
         }
+        if (title.trim().length > 200) {
+            toast.warning("채팅방 제목은 200자 이내로 작성해주세요.", {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            return;
+        }
         const createSectionsResponse = await createChatSectionService(memberId,title);
         if (createSectionsResponse.success) {
             setCurrentSection(createSectionsResponse.data);
@@ -95,6 +107,18 @@ const LLMChatList = () => {
             });
             return;
         }
+        if (editTitle.trim().length > 200) {
+            toast.warning("채팅방 제목은 200자 이내로 작성해주세요.", {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            return;
+        }
         setChatSections(prev =>
             prev.map(sec => sec.id === sectionId ? { ...sec, title: editTitle } : sec)
         );
@@ -131,9 +155,9 @@ const LLMChatList = () => {
                         whileHover={{ scale: 1.05 }}
                         onClick={createChatSectionHandler}
                     >
-                        + 새로운 채팅 생성
+                        + 새로운 AI 채팅
                     </motion.button>
-                    <h1 className={classes.chat_list_header}><IoMdChatbubbles/> {name}님 채팅 리스트 </h1>
+                    <h1 className={classes.chat_list_header}>{name}님 채팅 리스트</h1>
                     <AnimatePresence>
                         {chatSections.length !== 0 ? (
                             chatSections.map((section) => (

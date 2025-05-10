@@ -117,6 +117,9 @@
     color: #10a37f;
     margin-bottom: 6px;
 }
+.answer_text{
+    word-break: keep-all;
+}
 .loading_text {
     margin:30px 0;
     text-align: center;

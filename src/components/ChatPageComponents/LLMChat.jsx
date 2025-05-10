@@ -159,7 +159,7 @@ const LLMChat = ({ section }) => {
                                             <p className={classes.answer}>
                                                 ✅ Safe WorkCare
                                             </p>
-                                            <div dangerouslySetInnerHTML={{ __html: item.answer }} />
+                                            <div className={classes.answer_text} dangerouslySetInnerHTML={{ __html: item.answer }} />
                                         </div>
                                         {isLast && isLoading && (
                                             <p className={classes.loading_text}>

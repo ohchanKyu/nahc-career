@@ -47,10 +47,10 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/chat">Safe Chat</Nav.Link>
-              <Nav.Link as={Link} to="/me">My Page</Nav.Link>
-              <Nav.Link onClick={logoutHandler}>Logout</Nav.Link> 
+              <Nav.Link as={Link} to="/">홈</Nav.Link>
+              <Nav.Link as={Link} to="/chat">AI 채팅</Nav.Link>
+              <Nav.Link as={Link} to="/me">마이페이지</Nav.Link>
+              <Nav.Link onClick={logoutHandler}>로그아웃</Nav.Link> 
             </Nav>
           </Navbar.Collapse>
         </Container>

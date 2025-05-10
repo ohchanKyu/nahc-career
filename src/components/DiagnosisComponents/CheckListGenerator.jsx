@@ -61,7 +61,7 @@ function ChecklistGenerator(props) {
   const generateChecklist = async () => {
     
     setIsSubmit(true);
-    if (inputs.reason.trim().length > 10){
+    if (inputs.reason.trim().length > 15){
       toast.warning("사고 키워드는 15자 이내로 입력해주세요.", {
         position: "top-center",
         autoClose: 1000,
@@ -101,6 +101,7 @@ function ChecklistGenerator(props) {
       }),
     });
     const checklistData = await res.json();
+    console.log("Response : ",checklistData);
     props.onHandleResult(checklistData.content,inputs);
     setIsSubmit(false);
     setInputs({
@@ -134,7 +135,7 @@ function ChecklistGenerator(props) {
         </select>
       </div>
       <div className={styles.formGroup}>
-        <label className={styles.label}>작업명</label>
+        <label className={styles.label}>작업명 <span className={styles.required}>*</span></label>
         <select
           name="jobType"
           value={inputs.jobType}
@@ -149,7 +150,7 @@ function ChecklistGenerator(props) {
         </select>
       </div>
       <div className={styles.formGroup}>
-          <label className={styles.label}>단위 작업명</label>
+          <label className={styles.label}>단위 작업명 <span className={styles.required}>*</span></label>
           <select
             name="subJobType"
             value={inputs.subJobType}
@@ -164,7 +165,7 @@ function ChecklistGenerator(props) {
           </select>
       </div>
       <div className={styles.formGroup}>
-        <label className={styles.label}>사고 키워드</label>
+        <label className={styles.label}>사고 키워드 <span className={styles.required}>*</span></label>
         <input
           type="text"
           name="reason"
@@ -176,7 +177,7 @@ function ChecklistGenerator(props) {
       </div>
       <div className={styles.formRowGroup}>
         <div className={styles.formRowSubGroup}>
-          <label className={styles.labelRow}>작업 난이도</label>
+          <label className={styles.labelRow}>작업 난이도 <span className={styles.required}>*</span></label>
           <select
             name="difficulty"
             value={inputs.difficulty}
@@ -190,7 +191,7 @@ function ChecklistGenerator(props) {
           </select>
         </div>
         <div className={styles.formRowSubGroup}>
-          <label className={styles.labelRow}>위험도</label>
+          <label className={styles.labelRow}>위험도 <span className={styles.required}>*</span></label>
           <select
             name="riskLevel"
             value={inputs.riskLevel}
@@ -204,7 +205,7 @@ function ChecklistGenerator(props) {
           </select>
         </div>
         <div className={styles.formRowSubGroup}>
-          <label className={styles.labelRow}>예상 작업 시간</label>
+          <label className={styles.labelRow}>예상 작업 시간 <span className={styles.required}>*</span></label>
           <input
             min="1"
             type="number"
